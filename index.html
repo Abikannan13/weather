@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>weather</title>
+  <link rel="icon" href="" />
+  <!-- bootstrape -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+  <!-- fontawesom -->
+  <script src="https://kit.fontawesome.com/86253ff43d.js" crossorigin="anonymous"></script>
+  <!-- Styles -->
+  <style>
+    @media only screen and (max-width: 1000px) {
+      #main-heading {
+        color: rgb(43, 51, 51);
+      }
+    }
+
+    #currentTemp {
+      font-size: 5rem;
+      font-family: 'Times New Roman', sans-serif;
+    }
+
+    #card2 {
+      background-image: url('https://png.pngtree.com/background/20210712/original/pngtree-sunny-weather-realistic-background-picture-image_1172734.jpg');
+      border-radius: 25px;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+    }
+
+    #card1 {
+      color: #4b515d;
+      border-radius: 35px;
+      background-image: url('https://cdn.pixabay.com/photo/2016/06/07/16/12/sky-1441936_960_720.jpg');
+      background-attachment: fixed;
+      background-size: cover;
+    }
+    a{
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 18px;
+      color: rgb(50, 50, 46);
+    }
+    a:hover{
+      color:rgb(88, 88, 81);
+    }
+    span {
+      color: rgb(28, 25, 25);
+      font-weight: 500;
+    }
+  </style>
+</head>
+
+<body>
+  <section class="vh-100" style="background-image: url('https://images7.alphacoders.com/993/thumb-1920-993764.jpg')">
+    <div class="container py-5 h-100">
+      <h1 class="text-center mt-5" id="main-heading">Live Weather Forecast <img
+          src="https://img.icons8.com/clouds/100/000000/partly-cloudy-night.png" /></h1>
+
+      <!-- ************************************ Geo Weather **************************** -->
+      <div class="row">
+        <div class="col">
+          <div class="card mt-3 shadow-lg border-0" id="card1">
+            <img src="" alt="">
+            <div class="card-body p-4">
+              <div class="d-flex">
+                <h5 class="flex-grow-1 text-dark " id="cityAuto">Madurai</h5>
+                <h5 id="geoTime" class="text-dark">15:07</h5>
+              </div>
+              <div class="d-flex flex-column text-center mt-5 mb-4">
+                <h6 class="display-4 mb-0 font-weight-bold" style="color: #1c2331" id="tempGeo">
+                  Temp
+                </h6>
+                <span class="medium" style="color: #515358" id="geoClouds">Stormy</span>
+              </div>
+
+              <div class="d-flex align-items-center">
+                <div class="flex-grow-1" style="font-size: 1rem">
+                  <div>
+                    <img
+                      src="https://img.icons8.com/external-line-gradient-kendis-lasman/32/000000/external-temperature-weather-and-disaster-line-gradient-line-gradient-kendis-lasman.png"
+                      style="height:27px ;" />
+                    <span id="geoFeels">36</span>
+                  </div>
+                  <div>
+                    <i class="fas fa-wind fa-fw" style="color: #868b94"></i>
+                    <span class="ms-1" id="geoWind"> 40 km/h </span>
+                  </div>
+                  <div>
+                    <i class="fas fa-tint fa-fw" style="color: #868b94"></i>
+                    <span class="ms-1" id="geoHumidity"> 84% </span>
+                  </div>
+                  <div>
+                    <img src="https://img.icons8.com/metro/26/737373/sorting-arrows.png" style="height:20px;" />
+                    <span class="ms-1" id="mxmn"> 0 </span>
+                  </div>
+                </div>
+                <div>
+                  <img src="https://img.icons8.com/fluency/96/000000/partly-cloudy-day.png" style="height:100px"/>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- *************************************** Search City Weather ***************************************************** -->
+
+        <div class="col">
+          <div class="input-group rounded my-3  " style="border-radius: 35px;">
+            <input type="search" class="form-control rounded" placeholder="Enter City name" aria-label="Search"
+              aria-describedby="search-addon" id="input-box" />
+          </div>
+
+          <div class="card shadow-lg  border-0" id="card2">
+            <div class="card-body p-4">
+              <h4 class="mb-1 sfw-normal" id="customCity">New York, US</h4>
+              <h5 class="mb-1 sfw-normal lh-lg" id="currentDate">
+                08 November (Thursday), 2023
+              </h5>
+              <div class="d-flex align-items-center">
+                <div class="flex-grow-1" style="font-size: 1rem">
+                  <p class="mb-2">
+                    Humidity: <strong id="humidity">80</strong>
+                  </p>
+                  <p>Feels like: <strong id="feelsLike">4.37°C</strong></p>
+                  <p>
+                    Max: <strong id="minTemp">6.11°C</strong>, Min:
+                    <strong id="maxTemp">3.89°C</strong>
+                  </p>
+                  <p class="mb-0 me-4"><span id="cloud">Scattered Clouds</span>
+                    <i class="fas fa-cloud fa-3x" style="color: rgb(142, 130, 130); margin-left: 15px;"></i></p>
+                </div>
+                <div>
+                  <h1 id="currentTemp">5.42°C</h1>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  </section>
+  <section>
+
+  </section>
+  <!-- //*********************************** Search city weather end ***************************** -->
+
+  <script src="script.js"></script>
+</body>
+
+</html>
